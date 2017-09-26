@@ -1,11 +1,6 @@
-export const addWeather = (city) => ({
+export const addWeather = city => ({
   type: 'ADD_WEATHER',
-  name: city.label,
-  temperature: city.temperature,
-  wind: city.wind,
-  pressure: city.pressure,
-  icon: city.icon,
-  apiId: city.id
+  city: city
 });
 
 export const deleteWeather = id => ({ 
