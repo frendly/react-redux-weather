@@ -2,7 +2,9 @@
   "name": "weather",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://frendly.github.io/react-redux-weather",
   "dependencies": {
+    "gh-pages": "^1.0.0",
     "openweather-apis": "^3.3.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -14,6 +16,8 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
