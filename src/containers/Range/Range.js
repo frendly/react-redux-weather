@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { filterWeather } from "../../actions";
 import InputRange from "react-input-range";
 import "react-input-range/lib/css/index.css";
-import './Range.css';
+import "./Range.css";
 
 const Range = ({ dashboard, filter, dispatch }) => {
   const max = Math.max(...dashboard.map(o => o.temperature));
@@ -15,6 +15,8 @@ const Range = ({ dashboard, filter, dispatch }) => {
     }
   };
 
+  const formatLabel = value => (value > 0 ? "+" : "") + value + " °C";
+
   return (
     <section className="Range">
       <div>Где сейчас теплее, чем</div>
@@ -23,7 +25,7 @@ const Range = ({ dashboard, filter, dispatch }) => {
         minValue={min}
         value={filter}
         onChange={e => handleChange(e)}
-        formatLabel={value => (value > 0 ? `+${value}` : '') + ' °C'}
+        formatLabel={formatLabel}
       />
     </section>
   );
