@@ -78,7 +78,15 @@
 }
 
 .geosuggest__suggests {
-  padding: 0 1em;
   border: none;
   box-shadow: 0 0 1px #3d464d;
+}
+
+.geosuggest__item {
+  padding: .2em 1em;
+}
+
+.geosuggest__item--active {
+  background: #267dc0;
+  color: #fff;
 }
