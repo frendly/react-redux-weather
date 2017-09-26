@@ -17,18 +17,14 @@ const Range = ({ dashboard, filter, dispatch }) => {
 
   return (
     <section className="Range">
-      {dashboard.length > 0 ? (
-        <div>
-          <div>Где сейчас теплее, чем</div>
-          <InputRange
-            maxValue={max}
-            minValue={min}
-            value={filter}
-            onChange={e => handleChange(e)}
-            formatLabel={value => (value > 0 ? `+${value}` : '') + ' °C'}
-          />
-        </div>
-      ) : ''}
+      <div>Где сейчас теплее, чем</div>
+      <InputRange
+        maxValue={max}
+        minValue={min}
+        value={filter}
+        onChange={e => handleChange(e)}
+        formatLabel={value => (value > 0 ? `+${value}` : '') + ' °C'}
+      />
     </section>
   );
 };
