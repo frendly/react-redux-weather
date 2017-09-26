@@ -5,12 +5,14 @@ const DashboardItem = ({ name, temperature, handleRemove, id, wind, pressure, ic
   const img = `http://openweathermap.org/img/w/${icon}.png`;
   return (
     <li className='DashboardItem'>
-      <div>{name}</div>
-      <div>{temperature > 0 ? '+' : ''} {temperature}</div>
-      <div>{wind ? `Ветер: ${wind} м/с` : ''}</div>
-      <div>{pressure ? `Давление: ${pressure} мм` : ''}</div>
-      <div>{icon ? <img src={img} alt='' /> : ''}</div>
-      <button onClick={() => handleRemove(id)}>✕</button>
+      <div><strong>{name}</strong></div>
+      <div className="DashboardItem__weather">
+        <span>{icon ? <img src={img} alt='' /> : ''}</span>
+        <span>{temperature > 0 ? '+' : ''} {temperature} °C</span>
+      </div>
+      <div className="DashboardItem__description">{wind ? `Ветер: ${wind} м/с` : ''}</div>
+      <div className="DashboardItem__description">{pressure ? `Давление: ${pressure} мм` : ''}</div>
+      <button className="DashboardItem__close" onClick={() => handleRemove(id)}>✕</button>
     </li>
   );
 }

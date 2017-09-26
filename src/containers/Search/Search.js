@@ -31,17 +31,18 @@ let Search = ({ dispatch }) => {
   };
 
   return (
-    <form className="Search">
-      <Geosuggest
-        placeholder="Укажите город"
-        country="ru"
-        types={["(cities)"]}
-        onActivateSuggest={e => console.log(e)}
-        onSuggestSelect={onSuggestSelect}
-        getSuggestLabel={getSuggestLabel}
-      />
-      <button>+</button>
-    </form>
+		<section className="Search">
+			<form className="Search-form">
+				<Geosuggest
+					placeholder="Укажите город"
+					country="ru"
+					types={["(cities)"]}
+					onActivateSuggest={e => console.log(e)}
+					onSuggestSelect={onSuggestSelect}
+					getSuggestLabel={getSuggestLabel}
+				/>
+			</form>
+		</section>
   );
 };
 

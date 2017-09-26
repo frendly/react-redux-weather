@@ -1,0 +1,24 @@
+.Range {
+  margin-bottom: 2em;
+}
+
+.input-range {
+  margin-top: .5em;
+}
+
+.input-range__label--min,
+.input-range__label--max {
+  display: none;
+}
+
+.input-range__label--value {
+  top: .9em;
+}
+
+.input-range__track {
+  background: #3f51b5;
+}
+
+.input-range__track--active {
+  background: #eee !important;
+}
