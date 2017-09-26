@@ -1,29 +1,28 @@
-const initialState = [];
-// const initialState = [
-//   {
-//     id: 1,
-//     name: "Москва",
-//     temperature: 18
-//   },
-//   {
-//     id: 2,
-//     name: "Санкт-Петербург",
-//     temperature: 12
-//   },
-//   {
-//     id: 3,
-//     name: "Одесса",
-//     temperature: 25
-//   },
-//   {
-//     id: 4,
-//     name: "Минск",
-//     temperature: -10
-//   }
-// ];
+// const initialState = [];
+const initialState = [
+  {
+    id: 1,
+    name: "Москва",
+    temperature: 18
+  },
+  {
+    id: 2,
+    name: "Санкт-Петербург",
+    temperature: 12
+  },
+  {
+    id: 3,
+    name: "Одесса",
+    temperature: 25
+  },
+  {
+    id: 4,
+    name: "Минск",
+    temperature: -10
+  }
+];
 
 let id = 4;
-
 const dashboard = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_WEATHER":

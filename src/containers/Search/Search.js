@@ -17,8 +17,8 @@ let Search = ({ dispatch }) => {
     weather.setCoordinate(city.location.lat, city.location.lng);
     weather.getAllWeather(function(err, JSONObj) {
       city.temperature = Math.round(JSONObj.main.temp);
-      city.wind = JSONObj.wind.speed;
-      city.pressure = JSONObj.main.pressure;
+      city.wind = Math.round(JSONObj.wind.speed);
+      city.pressure = Math.round(JSONObj.main.pressure);
       city.icon = JSONObj.weather[0].icon;
       city.id = JSONObj.id;
 
@@ -31,18 +31,17 @@ let Search = ({ dispatch }) => {
   };
 
   return (
-		<section className="Search">
-			<form className="Search-form">
-				<Geosuggest
-					placeholder="Укажите город"
-					country="ru"
-					types={["(cities)"]}
-					onActivateSuggest={e => console.log(e)}
-					onSuggestSelect={onSuggestSelect}
-					getSuggestLabel={getSuggestLabel}
-				/>
-			</form>
-		</section>
+    <section className="Search">
+      <form className="Search-form">
+        <Geosuggest
+          placeholder="Укажите город"
+          country="ru"
+          types={["(cities)"]}
+          onSuggestSelect={onSuggestSelect}
+          getSuggestLabel={getSuggestLabel}
+        />
+      </form>
+    </section>
   );
 };
 
