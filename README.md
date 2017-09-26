@@ -2,9 +2,9 @@
 https://frendly.github.io/react-redux-weather/
 
 ## Install
-`git clone git@github.com:frendly/react-redux-weather.git`
-`cd react-redux-weather`
-`npm i`
+* `git clone git@github.com:frendly/react-redux-weather.git`
+* `cd react-redux-weather`
+* `npm i`
 
 ### Run
 `npm start`
