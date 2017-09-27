@@ -6,6 +6,8 @@ import { addWeather } from "../../actions";
 import "./Search.css";
 
 let Search = ({ dispatch }) => {
+  let geosuggestInput;
+
   const onSuggestSelect = suggest => {
     const city = {
       label: suggest.label.split(",")[0],
@@ -24,8 +26,10 @@ let Search = ({ dispatch }) => {
 
       dispatch(addWeather(city));
       // console.log(city);
+      geosuggestInput.clear();
     });
   };
+
   const getSuggestLabel = suggest => {
     return suggest.description;
   };
@@ -34,6 +38,7 @@ let Search = ({ dispatch }) => {
     <section className="Search">
       <form className="Search-form">
         <Geosuggest
+          ref={el => geosuggestInput = el}
           placeholder="Укажите город"
           country="ru"
           types={["(cities)"]}
